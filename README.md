@@ -1,5 +1,6 @@
 # CloudInfraScanner_BackendOpenCV
 클라우드 인프라 스캐너 (OpenCV)
+![cloudinfra_largepix](https://github.com/user-attachments/assets/696eaaa4-2c95-4178-94db-bc0fbeefaba2)
 
 ### **이미지 처리 스크립트 문서화**  
 
