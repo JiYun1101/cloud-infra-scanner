@@ -1,14 +1,17 @@
 from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import os
+from dotenv import load_dotenv
 from process_image import process_image
 import json
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
-UPLOAD_FOLDER = os.path.abspath('uploads')
-OUTPUT_FOLDER = os.path.abspath('outputs')
+UPLOAD_FOLDER = os.path.abspath(os.getenv("UPLOAD_DIR", "uploads"))
+OUTPUT_FOLDER = os.path.abspath(os.getenv("OUTPUT_DIR", "outputs"))
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 
@@ -37,7 +40,7 @@ def upload_and_process_image():
 
     # 처리된 이미지 URL과 JSON 데이터를 반환
     return jsonify({
-        "processedImageUrl": f"http://127.0.0.1:5000/outputs/processed_{file.filename}",
+        "processedImageUrl": f"http://{os.getenv('PUBLIC_HOST', '127.0.0.1')}:{os.getenv('PORT', '5000')}/outputs/processed_{file.filename}",  # [변경]
         "result": json.loads(json_data) 
     })
 
@@ -49,4 +52,4 @@ def serve_processed_image(filename):
     return send_from_directory(OUTPUT_FOLDER, filename, as_attachment=False)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host=os.getenv("HOST", "127.0.0.1"), port=int(os.getenv("PORT", "5000")), debug=True)
