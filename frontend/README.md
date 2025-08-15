@@ -1,4 +1,4 @@
-# CloudInfraScanner
+# cloud-infra-scanner-frontend
 클라우드 인프라 스캐너 (OpenCV)
 
 ![cloudinfra](https://github.com/user-attachments/assets/c43a2ed2-a492-43cb-9b9d-5651e4623caa)
