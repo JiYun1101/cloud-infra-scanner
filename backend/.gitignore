@@ -2,7 +2,6 @@ venv/
 __pycache__/
 *.pyc
 
-# 입력/출력: 샘플만 추적
 uploads/*
 !uploads/cloudimage.png
 
