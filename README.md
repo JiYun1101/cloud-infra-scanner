@@ -1,25 +1,26 @@
 # Cloud Infra Scanner
 
 클라우드 인프라 스캐너 (Next.js, TypeScript, Python, OpenCV)
-클라우드 인프라 스캐너는 클라우드 아키텍처 다이어그램을 자동으로 인식하여 각 리소스를 적절한 위치에 배치하고 연결해주는 프로젝트입니다.
 
-##주요 기능
+클라우드 인프라 스캐너는 **클라우드 아키텍처 다이어그램을 자동으로 인식하여 각 리소스를 적절한 위치에 배치하고 연결**해주는 프로젝트입니다.
 
-업로드된 아키텍처 다이어그램 이미지 인식 (OpenCV, Python)
+---
 
-클라우드 리소스 자동 탐지 및 분류
+## 주요 기능
 
-리소스별 위치 매핑 및 선 연결 처리
+* 업로드된 아키텍처 다이어그램 이미지 인식 (OpenCV, Python)
+* 클라우드 리소스 자동 탐지 및 분류
+* 리소스별 위치 매핑 및 선 연결 처리
+* 결과물을 시각적으로 재가공하여 다운로드 가능
 
-결과물을 시각적으로 재가공하여 다운로드 가능
+---
 
-##기술 스택
+## 기술 스택
 
-Frontend: Next.js, TypeScript, React
+* **Frontend**: Next.js, TypeScript, React
+* **Backend**: Python (Flask), OpenCV, JSON
+* **Infra/Etc**: Git, GitHub Actions, Docker (선택적)
 
-Backend: Python (Flask), OpenCV, JSON
-
-Infra/Etc: Git, GitHub Actions, Docker (선택적)
 ---
 
 ## 📂 프로젝트 구조
